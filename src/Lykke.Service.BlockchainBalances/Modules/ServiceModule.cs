@@ -1,8 +1,8 @@
 ﻿using Autofac;
 using Common.Log;
 using Lykke.Service.BlockchainBalances.Core.Services;
-using Lykke.Service.BlockchainBalances.Core.Settings;
 using Lykke.Service.BlockchainBalances.Services;
+using Lykke.Service.BlockchainBalances.Settings;
 using Lykke.SettingsReader;
 
 namespace Lykke.Service.BlockchainBalances.Modules
@@ -36,8 +36,8 @@ namespace Lykke.Service.BlockchainBalances.Modules
             
             builder.RegisterType<BlockchainBalancesService>()
                 .As<IBlockchainBalanceService>()
-                .WithParameter(TypedParameter.From(_settings.CurrentValue.NinjaServiceClient))
-                .WithParameter(TypedParameter.From(_settings.CurrentValue.EtheriumSamuraiServiceClient))
+                .WithParameter("ninjaUrl", _settings.CurrentValue.NinjaServiceClient.ServiceUrl)
+                .WithParameter("samuraiUrl", _settings.CurrentValue.EtheriumSamuraiServiceClient.ServiceUrl)
                 .SingleInstance();
         }
     }

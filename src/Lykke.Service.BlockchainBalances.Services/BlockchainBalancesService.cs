@@ -1,12 +1,10 @@
 ﻿using System;
-using System.IO;
 using System.Numerics;
 using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
 using Lykke.Service.BlockchainBalances.Core.Domain;
 using Lykke.Service.BlockchainBalances.Core.Services;
-using Lykke.Service.BlockchainBalances.Core.Settings.ClientSettings;
 using Nethereum.Util;
 using BalanceModel = Lykke.Service.BlockchainBalances.Core.Domain.BalanceModel;
 
@@ -19,12 +17,12 @@ namespace Lykke.Service.BlockchainBalances.Services
         private readonly string _samuraiUrl;
 
         public BlockchainBalancesService(
-            NinjaServcieSettings ninjaServiceSettings,
-            EtheriumSamuraiServiceSettings samuraiServiceSettings
+            string ninjaUrl,
+            string samuraiUrl
             )
         {
-            _ninjaUrl = ninjaServiceSettings.ServiceUrl;
-            _samuraiUrl = samuraiServiceSettings.ServiceUrl;
+            _ninjaUrl = ninjaUrl;
+            _samuraiUrl = samuraiUrl;
         }
 
         public async Task<BalanceModel> GetBalanceAsync(string address, Blockchain blockchain)
