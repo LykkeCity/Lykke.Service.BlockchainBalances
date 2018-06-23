@@ -2,9 +2,9 @@
 using System.Net;
 using System.Threading.Tasks;
 using Common.Log;
+using Lykke.Common.Api.Contract.Responses;
 using Lykke.Service.BlockchainBalances.Core.Domain;
 using Lykke.Service.BlockchainBalances.Core.Services;
-using Lykke.Service.BlockchainBalances.Models;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
 

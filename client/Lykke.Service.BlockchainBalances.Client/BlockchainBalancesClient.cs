@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Service.BlockchainBalances.Client.AutorestClient;
@@ -14,7 +15,7 @@ namespace Lykke.Service.BlockchainBalances.Client
         public BlockchainBalancesClient(string serviceUrl, ILog log)
         {
             _log = log;
-            _service = new BlockchainBalancesAPI(new Uri(serviceUrl));  
+            _service = new BlockchainBalancesAPI(new Uri(serviceUrl), new HttpClient());  
         }
 
         public void Dispose()

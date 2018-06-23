@@ -1,6 +1,6 @@
 ﻿using Lykke.SettingsReader.Attributes;
 
-namespace Lykke.Service.BlockchainBalances.Core.Settings.ClientSettings
+namespace Lykke.Service.BlockchainBalances.Settings.ClientSettings
 {
     public class NinjaServcieSettings
     {

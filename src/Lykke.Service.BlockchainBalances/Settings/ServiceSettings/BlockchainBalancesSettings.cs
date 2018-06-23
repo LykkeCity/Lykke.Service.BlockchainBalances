@@ -1,4 +1,4 @@
-﻿namespace Lykke.Service.BlockchainBalances.Core.Settings.ServiceSettings
+﻿namespace Lykke.Service.BlockchainBalances.Settings.ServiceSettings
 {
     public class BlockchainBalancesSettings
     {
